@@ -5,7 +5,7 @@
 /***** Global *****/
 /* Body */
 body {
-    background: #F5F4EF url('../images/bg.png');
+    background: #F5F4EF url('/assets/bg.png');
     color: #000305;
     font-size: 87.5%; /* Base font size: 14px */
     font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -38,7 +38,7 @@ a:link, a:visited {
 }
 a:hover, a:active {
     background-color: #C74350;
-    color: #f       ff;
+    color: #fff;
     text-decoration: none;
     text-shadow: 1px 1px 1px #333;
 }
@@ -49,9 +49,6 @@ p {margin-bottom: 1.143em;}
 
 strong, b {font-weight: bold;}
 em, i {font-style: italic;}
-
-::-moz-selection {background: #F6CF74; color: #fff;}
-::selection {background: #F6CF74; color: #fff;}
 
 /* Lists */
 ul {
@@ -74,32 +71,8 @@ cite {}
 
 q {}
 
-/* Tables */
-table {margin: .5em auto 1.5em auto; width: 98%;}
-
-/* Thead */
-thead th {padding: .5em .4em; text-align: left;}
-thead td {}
-
-/* Tbody */
-tbody td {padding: .5em .4em;}
-tbody th                 {}
-
-tbody .alt td {}
-tbody .alt th {}
-
-/* Tfoot */
-tfoot th {}
-tfoot td {}
-
-/* HTML5 tags */
-header, section, footer,
-aside, nav, art icle, figure {
-    display: block;
-}
-
 /***** Layout *****/
-.body {clear: b oth; margin: 0 auto; width: 800px;}
+.body {clear: both; margin: 0 auto; width: 800px;}
 img.right figure.right {float: right; margin: 0 0 2em 2em;}
 img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 
@@ -269,12 +242,12 @@ Featured
 }
 
 /* Icons */
-.social a[href*='delicious.com'] {background-image:                  url('../images/icons/delicious.png');}
-.social a[href*='digg.com'] {       background-image: url('../images/icons/digg.png');}
-.social a[href*='facebook.com'] {background-image: url('../images/icons/facebook.png');}
-.social a[href*='last.fm'], .social a[href*='lastfm.'] {background-image:       url('../images/icons/lastfm.png');}
-.social a[href*='/feed/'] {background-image: url('../images/icons/rss.png');}
-.social a[href*='twitter        .com'] {background-image: url('../images/icons/twitter.png');}
+.social a[href*='delicious.com'] {background-image:                  url('/assets/delicious.png');}
+.social a[href*='digg.com'] {       background-image: url('/assets/digg.png');}
+.social a[href*='facebook.com'] {background-image: url('/assets/facebook.png');}
+.social a[href*='last.fm'], .social a[href*='lastfm.'] {background-image:       url('/assets/lastfm.png');}
+.social a[href*='/feed/'] {background-image: url('/assets/rss.png');}
+.social a[href*='twitter.com'] {background-image: url('/assets/twitter.png');}
 
 /*
 * About
@@ -311,6 +284,7 @@ Featured
 .hentry {
     border-bottom: 1px solid #eee;
     padding: 1.5em 0;
+    padding-bottom: 2.5em;
 }
 li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 #content > .hentry {padding: 1em 0;}
@@ -323,7 +297,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 /* Content */
 .hentry footer {margin-bottom: 2em;}
 .hentry footer address {display: inline;}
-#posts-list footer addr     ess {display: block;}
+#posts-list footer address {display: block;}
 
 /* Blog Index */
 #posts-list {list-style: none; margin: 0;}
