@@ -1,4 +1,7 @@
 VideoExample::Application.routes.draw do
+  resources :videos
+
+
   get "home/index"
 
   # The priority is based upon order of creation:
