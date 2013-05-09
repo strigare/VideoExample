@@ -58,5 +58,15 @@ module VideoExample
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.assets.precompile += ['base.css']
+    config.assets.precompile += ['content.css']
+    config.assets.precompile += ['extras.css']
+    config.assets.precompile += ['featured.css']
+    config.assets.precompile += ['global-forms.css']
+    config.assets.precompile += ['header.css']
+    config.assets.precompile += ['main.css']
+    config.assets.precompile += ['reset.css']
+    config.assets.precompile += ['slideshow.css']
   end
 end
