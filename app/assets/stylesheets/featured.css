@@ -16,8 +16,9 @@ Featured
 #featured figure {
     border: 2px solid #eee;
     float: right;
-    margin: 0.786em 2em 0 5em;
+    margin: 0.786em 2em 0 1em;
     width: 248px;
+    border: none;
 }
 #featured figure img {display: blo  ck; float: right;}
 
