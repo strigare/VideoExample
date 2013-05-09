@@ -44,19 +44,30 @@
     width: 175px;
 }
 
-#extras div[class='social'] a {
-    background-repeat: no-repeat;
-    background-position: 3px 6px;
-    padding-left: 25px;
-}
 
-/* Icons */
-.social a[href*='delicious.com'] {background-image:                  url('/assets/delicious.png');}
-.social a[href*='digg.com'] {       background-image: url('/assets/digg.png');}
-.social a[href*='facebook.com'] {background-image: url('/assets/facebook.png');}
-.social a[href*='last.fm'], .social a[href*='lastfm.'] {background-image:       url('/assets/lastfm.png');}
-.social a[href*='/feed/'] {background-image: url('/assets/rss.png');}
-.social a[href*='twitter.com'] {background-image: url('/assets/twitter.png');}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 * About
