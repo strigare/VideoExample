@@ -1,17 +1,15 @@
-var slidePrefix            = "slide-";
-var slideControlPrefix     = "slide-control-";
-var slideHighlightClass    = "highlight";
-var slidesContainerID      = "slides";
-var slidesControlsID       = "slides-controls";
-var slideDelay 	       	= 10000;
-var slideAnimationInterval = 20;
-var slideTransitionSteps   = 10;
+keys = {slidePrefix:        'slide-', 
+        slideControlPrefix: 'slide-control-',
+        slideHighlightClass:'highlight',
+        slidesContainerID:  'slides',
+        slidesControlsID:   'slides-controls'
+};
 
 window.onload = function setUpSlideShow()
 {
         // collect the slides and the controls
-        slidesCollection = document.getElementById(slidesContainerID).children;
-        slidesControllersCollection = document.getElementById(slidesControlsID).children;
+        slidesCollection = document.getElementById(keys.slidesContainerID).children;
+        slidesControllersCollection = document.getElementById(keys.slidesControlsID).children;
                   
         totalSlides = slidesCollection.length;
                        
@@ -23,8 +21,8 @@ window.onload = function setUpSlideShow()
         for (var i=0; i < slidesCollection.length; i++)
         {
             //give IDs to slides and controls
-            slidesCollection[i].id = slidePrefix+(i+1);
-            slidesControllersCollection[i].id = slideControlPrefix+(i+1);
+            slidesCollection[i].id = keys.slidePrefix+(i+1);
+            slidesControllersCollection[i].id = keys.slideControlPrefix+(i+1);
                         
             // attach onclick handlers to controls, highlight the first control
             slidesControllersCollection[i].onclick = function(){clickSlide(this);};
@@ -34,12 +32,10 @@ window.onload = function setUpSlideShow()
                 slidesCollection[i].style.display = "none";
             }
             else{
-                slidesControllersCollection[i].className = slideHighlightClass;
+                slidesControllersCollection[i].className = keys.slideHighlightClass;
             }
             
             // initialize vars
-            slideTransStep= 0;
-            transTimeout  = 0;
             crtSlideIndex = 1;
         }
 }
@@ -49,54 +45,31 @@ function showSlide(slideNo)
      // get references to the current slide and to the one to be shown next
      nextSlideIndex = slideNo;
      
-     crtSlide = document.getElementById(slidePrefix + crtSlideIndex);
-     nextSlide = document.getElementById(slidePrefix + nextSlideIndex);
-     slideTransStep = 0;
+     crtSlide = document.getElementById(keys.slidePrefix + crtSlideIndex);
+     nextSlide = document.getElementById(keys.slidePrefix + nextSlideIndex);
                   
      transSlide();
 }
 
 function clickSlide(control)
 {
-        showSlide(Number(control.id.substr(control.id.lastIndexOf("-")+1)),true);
+     showSlide(Number(control.id.substr(control.id.lastIndexOf("-")+1)));
 }
  
 function transSlide()
 {
     // make sure the next slide is visible (albit transparent)
     nextSlide.style.display = "block";
- 
-    // calculate opacity
-    var opacity = slideTransStep / slideTransitionSteps;
- 
-    // fade out the current slide
-    crtSlide.style.opacity = "" + (1 - opacity);
-    crtSlide.style.filter = "alpha(opacity=" + (100 - opacity*100) + ")";
- 
-    // fade in the next slide
-    nextSlide.style.opacity = "" + opacity;
-    nextSlide.style.filter = "alpha(opacity=" + (opacity*100) + ")";
- 
-    // if not completed, do this step again after a short delay
-    if (++slideTransStep <= slideTransitionSteps)
-        transTimeout = setTimeout("transSlide()", slideAnimationInterval);
-    else
-    {
-        // complete
-        crtSlide.style.display = "none";
-        transComplete();
-    }
-}
 
-function transComplete()
-{
-    slideTransStep = 0;
+        // complete
+    crtSlide.style.display = "none";
     crtSlideIndex = nextSlideIndex;
  
     //unhighlight all controls
-    for (var i=0; i < slidesControllersCollection.length; i++)
+    for (var i=0; i < slidesControllersCollection.length; i++){
         slidesControllersCollection[i].className = "";
- 
+    }
+
     // highlight the control for the next slide
-    document.getElementById("slide-control-" + crtSlideIndex).className = slideHighlightClass;
+    document.getElementById("slide-control-" + crtSlideIndex).className = keys.slideHighlightClass;
 }
