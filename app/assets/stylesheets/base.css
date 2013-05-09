@@ -72,3 +72,6 @@ q {}
 .body {clear: both; margin: 0 auto; width: 800px;}
 img.right figure.right {float: right; margin: 0 0 2em 2em;}
 img.left, figure.left {float: right; margin: 0 0 2em 2em;}
+
+aside img{ padding:1px;border:thin solid #D5D4DF; }
+#content img{ padding:1px;border:thin solid #D5D4DF; }
